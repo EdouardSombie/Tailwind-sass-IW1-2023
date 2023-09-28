@@ -1,0 +1,27 @@
+@use "sass:color";
+
+$breakPoints: (
+	"sm": 640px,
+	"md": 768px,
+	"lg": 1024px,
+	"xl": 1280px,
+	"xxl": 1536px,
+);
+
+$colors: (
+	"white": #fff,
+	"black": #000,
+	"darkBlue": #1e293a,
+	"lightBlue": #5d7a97,
+	"pink": #ff2896,
+	"orange": #ff9b65,
+	"darkGreen": #00d5d5,
+	"lightGreen": #00ffbf,
+);
+
+:root {
+	@each $name, $value in $colors {
+		--#{$name}: #{$value};
+		--#{$name}-lighter: #{color.scale($value, $lightness: 30%)};
+	}
+}

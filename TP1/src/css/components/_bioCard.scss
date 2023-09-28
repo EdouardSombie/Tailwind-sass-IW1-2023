@@ -1,0 +1,17 @@
+@use "../partials/functions" as f;
+@use "../partials/mixins" as m;
+
+.bioCard {
+	width: f.rem(320);
+	padding: f.rem(32);
+	border-radius: f.rem(16);
+	background-color: var(--darkBlue);
+	color: var(--lightBlue);
+	@include m.flexbox(column, nowrap, flex-start, stretch);
+	&__img {
+		@include m.roundImage(200rem);
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: center;
+	}
+}
