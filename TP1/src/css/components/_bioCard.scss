@@ -7,11 +7,81 @@
 	border-radius: f.rem(16);
 	background-color: var(--darkBlue);
 	color: var(--lightBlue);
-	@include m.flexbox(column, nowrap, flex-start, stretch);
+	position: relative;
+	overflow: hidden;
+	@include m.flexbox(column, nowrap, flex-start, center);
+	&__header {
+		position: absolute;
+		left: f.rem(16);
+		right: f.rem(16);
+		top: f.rem(16);
+		@include m.flexbox(row, nowrap, flex-end, center);
+	}
 	&__img {
 		@include m.roundImage(200rem);
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
 		object-position: center;
+		margin-bottom: f.rem(24);
+		width: f.rem(176);
+		filter: saturate(0);
+	}
+	&__h1 {
+		font-size: f.rem(24);
+		line-height: 1;
+		margin-top: 0;
+		margin-bottom: f.rem(12);
+		@include m.textGradient(bottom, var(--pink), var(--orange));
+	}
+	&__h2 {
+		font-size: f.rem(20);
+		line-height: 1;
+		font-weight: 400;
+		margin-top: 0;
+		margin-bottom: f.rem(24);
+	}
+	&__hr {
+		width: 100%;
+		border-color: var(--lightBlue);
+		margin-top: 0;
+		margin-bottom: f.rem(16);
+	}
+	&__p {
+		font-size: f.rem(16);
+		line-height: normal;
+		margin-top: 0;
+		margin-bottom: f.rem(56);
+		text-align: center;
+	}
+
+	&__footer {
+		position: relative;
+		align-self: stretch;
+		&::before {
+			content: "";
+			position: absolute;
+			top: f.rem(-32);
+			left: f.rem(-32);
+			right: f.rem(-32);
+			bottom: f.rem(-64);
+			transform: skewY(7deg);
+			background: linear-gradient(-187deg, var(--orange) 0%, var(--pink) 60%);
+		}
+	}
+	.bioCard__ul {
+		position: relative;
+		@include m.resetList;
+		@include m.flexbox(row, wrap, center, center, f.rem(24));
+	}
+
+	.bioCard__a {
+		@include m.pillButton(var(--white), var(--pink));
+		&--alt {
+			@include m.pillButton(
+				linear-gradient(to bottom, var(--darkGreen) 0%, var(--lightGreen) 100%),
+				var(--black),
+				true
+			);
+		}
 	}
 }
