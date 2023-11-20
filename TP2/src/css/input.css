@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text-color: theme(colors.slate.500);
+    --color-primary: 255 115 179;
+  }
+}
