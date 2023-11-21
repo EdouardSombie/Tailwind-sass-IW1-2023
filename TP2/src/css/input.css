@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=auto");
+  :root {
+    font-family: "Istok Web", sans-serif;
+    --text-color: theme(colors.slate.900);
+  }
+}
+
+@layer components {
+  .pillButton {
+    @apply relative top-0 flex aspect-square w-8 items-center justify-center rounded-full bg-white leading-none transition-all duration-300 after:absolute after:top-[100%] after:h-1 after:w-full after:content-none hover:-top-1 hover:after:content-[''];
+  }
+}

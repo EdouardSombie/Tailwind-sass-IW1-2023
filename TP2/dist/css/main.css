@@ -434,9 +434,11 @@ video {
   display: none;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=auto");
+
 :root {
-  --text-color: #64748b;
-  --color-primary: 255 115 179;
+  font-family: "Istok Web", sans-serif;
+  --text-color: #0f172a;
 }
 
 *, ::before, ::after {
@@ -573,8 +575,79 @@ video {
   }
 }
 
+.pillButton {
+  position: relative;
+  top: 0px;
+  display: flex;
+  aspect-ratio: 1 / 1;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  line-height: 1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.pillButton::after {
+  position: absolute;
+  top: 100%;
+  height: 0.25rem;
+  width: 100%;
+  --tw-content: none;
+  content: var(--tw-content);
+}
+
+.pillButton:hover {
+  top: -0.25rem;
+}
+
+.pillButton:hover::after {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.flex {
+  display: flex;
 }
 
 .aspect-square {
@@ -585,16 +658,49 @@ video {
   width: 11rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-80 {
   width: 20rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .overflow-hidden {
   overflow: hidden;
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border-lightBlue {
+  --tw-border-opacity: 1;
+  border-color: rgb(93 122 151 / var(--tw-border-opacity));
 }
 
 .bg-darkBlue-950 {
@@ -602,25 +708,184 @@ video {
   background-color: rgb(30 41 58 / var(--tw-bg-opacity));
 }
 
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-lightGreen {
+  --tw-gradient-from: #00FFBF var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 255 191 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-pink {
+  --tw-gradient-from: #FF2896 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 40 150 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-darkGreen {
+  --tw-gradient-to: #00D5D5 var(--tw-gradient-to-position);
+}
+
+.to-orange {
+  --tw-gradient-to: #FF9B65 var(--tw-gradient-to-position);
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.object-center {
-  -o-object-position: center;
-     object-position: center;
+.p-8 {
+  padding: 2rem;
 }
 
-.text-primary {
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.tracking-small {
+  letter-spacing: 0.01em;
+}
+
+.text-lightBlue {
   --tw-text-opacity: 1;
-  color: rgb(var(--color-primary) / var(--tw-text-opacity));
+  color: rgb(93 122 151 / var(--tw-text-opacity));
 }
 
 .text-text-color {
   color: var(--text-color);
 }
 
-.\[--color-primary\:theme\(colors\.rgb\.darkBlue\.300\)\] {
-  --color-primary: 163 186 214;
+.saturate-0 {
+  --tw-saturate: saturate(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.\[-webkit-background-clip\:text\] {
+  -webkit-background-clip: text;
+}
+
+.\[-webkit-text-fill-color\:transparent\] {
+  -webkit-text-fill-color: transparent;
+}
+
+.before\:absolute::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.before\:-bottom-16::before {
+  content: var(--tw-content);
+  bottom: -4rem;
+}
+
+.before\:-left-8::before {
+  content: var(--tw-content);
+  left: -2rem;
+}
+
+.before\:-right-8::before {
+  content: var(--tw-content);
+  right: -2rem;
+}
+
+.before\:-top-8::before {
+  content: var(--tw-content);
+  top: -2rem;
+}
+
+.before\:skew-y-\[7deg\]::before {
+  content: var(--tw-content);
+  --tw-skew-y: 7deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.before\:bg-gradient-187::before {
+  content: var(--tw-content);
+  background-image: linear-gradient(-187deg,var(--tw-gradient-from) 0%, var(--tw-gradient-to) 60%);
+}
+
+.before\:from-orange::before {
+  content: var(--tw-content);
+  --tw-gradient-from: #FF9B65 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 155 101 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.before\:to-pink::before {
+  content: var(--tw-content);
+  --tw-gradient-to: #FF2896 var(--tw-gradient-to-position);
+}
+
+.before\:content-\[\'\'\]::before {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.after\:absolute::after {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:top-\[100\%\]::after {
+  content: var(--tw-content);
+  top: 100%;
+}
+
+.after\:h-1::after {
+  content: var(--tw-content);
+  height: 0.25rem;
+}
+
+.after\:w-full::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+
+.after\:content-none::after {
+  --tw-content: none;
+  content: var(--tw-content);
+}
+
+.hover\:top-\[-0\.25rem\]:hover {
+  top: -0.25rem;
+}
+
+.hover\:after\:content-\[\'\'\]:hover::after {
+  --tw-content: '';
+  content: var(--tw-content);
 }
